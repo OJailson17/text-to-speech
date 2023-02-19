@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Text to speech</title>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./styles/styles.css" />
+
+		<title>Texto para fala</title>
 	</head>
 	<body>
-		<h1>Convert text to speech</h1>
+		<div class="app">
+			<h1>Texto para fala</h1>
 
-		<select name="voice" id="voice">
-			<option value="mike">Inglês: Mike (Homem)</option>
-			<option value="dinis">Português: Dinis (Homem)</option>
-		</select>
+			<p class="description">
+				Converta textos em fala em dois idiomas: português e inglês. Você pode
+				colar qualquer texto na caixa abaixo e clicar em converter, em instantes
+				o seu texto será falado no idioma e na voz desejada.
+			</p>
 
-		<textarea id="text"></textarea>
+			<div class="inputs-wrapper">
+				<label for="voice" class="voice-label">Selecione a voz desejada</label>
+				<select name="voice" id="voice">
+					<option value="dinis">Português: Dinis (Masculina)</option>
+					<option value="marcia">Português: Marcia (Feminina)</option>
+					<option value="ligia">Português: Ligia (Feminina)</option>
+					<option value="yara">Português: Yara (Feminina)</option>
+					<option value="mike">Inglês: Mike (Masculina)</option>
+					<option value="linda">Inglês: Linda (Feminina)</option>
+					<option value="amy">Inglês: Amy (Feminina)</option>
+					<option value="john">Inglês: John (Masculina)</option>
+					<option value="mary">Inglês: Mary (Feminina)</option>
+				</select>
 
-		<button onclick="textToSpeech()">Convert</button>
+				<textarea id="text" placeholder="Adicione o texto aqui"></textarea>
+
+				<button onclick="textToSpeech()" class="converter-btn">Convert</button>
+			</div>
+		</div>
 
 		<script src="/lib/voicerss-tts.min.js"></script>
-		<script src="/script.js"></script>
+		<script src="./js/script.js"></script>
 	</body>
 </html>
