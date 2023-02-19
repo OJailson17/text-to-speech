@@ -42,14 +42,19 @@ const voiceOptions = {
 
 // Function responsible for converting text to speech
 const textToSpeech = () => {
-	VoiceRSS.speech({
-		key: '45ec954d8ec8428795f042cafca4bd38',
-		src: text.value,
-		hl: voiceOptions[voice.value].language,
-		v: voiceOptions[voice.value].name,
-		r: 0,
-		c: 'mp3',
-		f: '44khz_16bit_stereo',
-		ssml: false,
-	});
+	fetch('/api/key')
+		.then(response => response.json())
+		.then(data => {
+			VoiceRSS.speech({
+				key: data.key,
+				src: text.value,
+				hl: voiceOptions[voice.value].language,
+				v: voiceOptions[voice.value].name,
+				r: 0,
+				c: 'mp3',
+				f: '44khz_16bit_stereo',
+				ssml: false,
+			});
+		})
+		.catch(err => console.log(err));
 };

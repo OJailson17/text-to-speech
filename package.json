@@ -1,0 +1,26 @@
+{
+	"name": "text-to-speech",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon src/server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/OJailson17/text-to-speech.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/OJailson17/text-to-speech/issues"
+	},
+	"homepage": "https://github.com/OJailson17/text-to-speech#readme",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2"
+	}
+}
