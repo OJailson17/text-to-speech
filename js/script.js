@@ -42,12 +42,9 @@ const voiceOptions = {
 
 // Function responsible for converting text to speech
 const textToSpeech = () => {
-	fetch('/api/key')
-		.then(response => response.json())
-		.then(data => {
 			VoiceRSS.speech({
-				key: data.key,
-				src: text.value,
+				key: 'API_key', //get the api key on the website
+				src: text.value || 'Hello	',
 				hl: voiceOptions[voice.value].language,
 				v: voiceOptions[voice.value].name,
 				r: 0,
@@ -55,6 +52,4 @@ const textToSpeech = () => {
 				f: '44khz_16bit_stereo',
 				ssml: false,
 			});
-		})
-		.catch(err => console.log(err));
 };
